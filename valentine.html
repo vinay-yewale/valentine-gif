@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Do You Love Me❤️?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        font-family: "Poppins", sans-serif;
+      }
+
+      .container {
+        background: white;
+        padding: 30px 20px 40px;
+        border-radius: 20px;
+        text-align: center;
+        width: 90%;
+        max-width: 380px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        position: relative;
+      }
+
+      h1 {
+        margin-bottom: 10px;
+        font-size: 26px;
+        color: #ff4d6d;
+      }
+
+      .bear {
+        width: 180px;
+        margin: 10px auto 20px;
+        display: block;
+      }
+
+      .question {
+        font-size: 22px;
+        margin-bottom: 30px;
+      }
+
+      .buttons {
+        position: relative;
+        width: 100%;
+        height: 80px;
+        margin-top: 10px;
+        pointer-events: auto;
+      }
+
+      button {
+        border: none;
+        padding: 12px 26px;
+        font-size: 18px;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      #yesBtn {
+        background: #ff4d6d;
+        color: #222222;
+        box-shadow: 0 6px 15px rgba(255, 77, 109, 0.5);
+      }
+
+      #yesBtn:hover {
+        transform: scale(1.08);
+      }
+
+      #noBtn {
+        position: absolute;
+        background: #dddddd;
+        color: #333;
+        left: 220px;
+        top: 0;
+        transition:
+          left 0.08s,
+          top 0.08s;
+      }
+
+      .result {
+        display: none;
+        font-size: 22px;
+        color: #ff4d6d;
+        margin-top: 20px;
+      }
+
+      .final-bear {
+        width: 200px;
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Background Music -->
+    <!-- <audio id="bgMusic" loop>
+      <source
+        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+        type="audio/mpeg"
+      />
+    </audio> -->
+
+    <div class="container">
+      <h1>Do You Love Me Rana ❤️?</h1>
+
+      <!-- Cute Bear GIF -->
+      <img
+        src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3MWY4eTgxNXRhcDVtNHloaHhpN2ZjOGV0NW53OTg3NTEzNDlhcmJxOCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ChZZlt1XhuPYI/giphy.gif"
+        alt="Cute Bear"
+        class="bear"
+      />
+
+      <div class="question" id="question">Do you love me Rana? 😘</div>
+
+      <div class="buttons" id="buttons">
+        <button
+          id="yesBtn"
+          style="position: absolute; left: 100px; top: 0; pointer-events: auto"
+        >
+          Yes
+        </button>
+        <button
+          id="noBtn"
+          style="position: absolute; left: 220px; top: 0; pointer-events: auto"
+        >
+          No
+        </button>
+      </div>
+
+      <div class="result" id="result">
+        💖 You are my Valentine only 💖<br />
+        Forever & Always 🥰
+        <br />
+        <img
+          src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3MWY4eTgxNXRhcDVtNHloaHhpN2ZjOGV0NW53OTg3NTEzNDlhcmJxOCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Gh6NDSdC96Ef3q5gWI/giphy.gif"
+          class="final-bear"
+          alt="Love Bear"
+        />
+        <audio id="bgMusic" loop>
+          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3" type="audio/mpeg" />
+        </audio>
+      </div>
+    </div>
+
+    <script>
+      const noBtn = document.getElementById("noBtn");
+      const yesBtn = document.getElementById("yesBtn");
+      const buttons = document.getElementById("buttons");
+      const result = document.getElementById("result");
+      const question = document.getElementById("question");
+      const music = document.getElementById("bgMusic");
+
+      let musicStarted = false;
+
+      function startMusic() {
+        if (!musicStarted) {
+          music.play().catch(() => {});
+          musicStarted = true;
+        }
+      }
+
+      function moveNoButton() {
+        startMusic();
+        const btnRect = noBtn.getBoundingClientRect();
+        const parentRect = buttons.getBoundingClientRect();
+
+        // Calculate max position relative to .buttons container
+        const maxX = parentRect.width - btnRect.width;
+        const maxY = parentRect.height - btnRect.height;
+
+        // Prevent negative values
+        const randomX = Math.max(0, Math.random() * maxX);
+        const randomY = Math.max(0, Math.random() * maxY);
+
+        noBtn.style.left = randomX + "px";
+        noBtn.style.top = randomY + "px";
+        noBtn.style.position = "absolute";
+      }
+
+      function fastMoveNoButton() {
+        moveNoButton();
+      }
+      noBtn.addEventListener("mouseover", fastMoveNoButton);
+      noBtn.addEventListener("touchstart", fastMoveNoButton);
+      noBtn.addEventListener("click", fastMoveNoButton);
+
+      yesBtn.addEventListener("click", () => {
+        startMusic();
+        question.style.display = "none";
+        buttons.style.display = "none";
+        result.style.display = "block";
+      });
+    </script>
+  </body>
+</html>
