@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <!-- <title>Do You Love Me❤️?</title> -->
-    <title>Happy Rose Day 🌹❣️</title>
+    <title>Happy Propose Day 💍❤️</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <style>
@@ -108,7 +108,7 @@
 
     <div class="container">
       <!-- <h1>Do You Love Me Rana ❤️?</h1> -->
-      <h1>Happy Rose Day Rana 🌹❣️</h1>
+      <h1 id="mainHeading">Happy Propose Day Rana 💍❤️</h1>
       <!-- Cute Bear GIF -->
       <!-- <img
         src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3MWY4eTgxNXRhcDVtNHloaHhpN2ZjOGV0NW53OTg3NTEzNDlhcmJxOCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ChZZlt1XhuPYI/giphy.gif"
@@ -116,13 +116,14 @@
         class="bear"
       /> -->
       <img
-        src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXNjM3k5aWR5b2UxZzBwenhlajM1Z2U2dHhhZGNoOXh6Y3lhMGJ1OCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/b9Ii69eefkK76/giphy.gif"
-        alt="Cute Bear"
+        id="mainBear"
+        src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDlzNG93N3QzNHI1ZmVkMHowaDhycTRjcXBuMmdsdWFkcms3bjFiZiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/lBJ6DhLDPAqOdAvrrz/giphy.gif"
+        alt="Proposal Bear"
         class="bear"
       />
 
       <!-- <div class="question" id="question">Do you love me Rana? 😘</div> -->
-      <div class="question" id="question">Will you accept this rose from me?</div>
+      <div class="question" id="question">Rana, will you always be my partner in love and life? 💑❤️</div>
 
       <div class="buttons" id="buttons">
         <button
@@ -140,15 +141,19 @@
       </div>
 
       <div class="result" id="result">
-        Happy Rose Day Rana 🌹<br />
-        You are the most special person in my life and I cherish every moment we share together<br />
-         Wishing you a day filled with love, joy, and beautiful roses!
-        <br />
+        Happy Propose Day Rana 💍❤️<br />
         <img
-          src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3MWY4eTgxNXRhcDVtNHloaHhpN2ZjOGV0NW53OTg3NTEzNDlhcmJxOCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Gh6NDSdC96Ef3q5gWI/giphy.gif"
+          src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzVwc3NuOW5vYTdjZXYxMGhneGYxaThydWRxODk5cWduOXAwdjl4eCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/gd0Dqg6rYhttBVCZqd/giphy.gif"
+          class="final-bear" alt="Proposal Bear" />
+        <br />
+        I am so grateful to have you as my wife.<br />
+        Thank you for being my partner, my best friend, and my forever love.<br />
+        Here's to many more years of happiness together!<br />
+        <!-- <img
+          src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzVwc3NuOW5vYTdjZXYxMGhneGYxaThydWRxODk5cWduOXAwdjl4eCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/gd0Dqg6rYhttBVCZqd/giphy.gif"
           class="final-bear"
-          alt="Love Bear"
-        />
+          alt="Proposal Bear"
+        /> -->
         <audio id="bgMusic" loop>
           <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3" type="audio/mpeg" />
         </audio>
@@ -202,6 +207,8 @@
         question.style.display = "none";
         buttons.style.display = "none";
         result.style.display = "block";
+        document.getElementById("mainHeading").style.display = "none";
+        document.getElementById("mainBear").style.display = "none";
       });
     </script>
   </body>
